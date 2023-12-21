@@ -36,5 +36,5 @@
     "suppressImplicitAnyIndexErrors": false,
     "types": ["gapi"]
   },
-  "include": ["src"]
+  "include": ["src", "custom.d.ts"]
 }

@@ -1,8 +1,10 @@
 import { FC } from 'react';
 
+import Layout from 'components/Layout';
+
 const App: FC = () => (
   <div className='App'>
-    <header className='App-header'>Configurator</header>
+    <Layout />
   </div>
 );
 

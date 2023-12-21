@@ -1,0 +1,15 @@
+export { ReactComponent as LogoIcon } from './logo.svg';
+export { default as standartSectionImage } from './standartSection.svg';
+export { default as img1 } from './img1.jpg';
+export { default as img2 } from './img2.jpg';
+export { default as img3 } from './img3.jpg';
+export { default as img4 } from './img4.jpg';
+export { default as img5 } from './img5.jpg';
+export { default as img6 } from './img6.jpg';
+export { default as img7 } from './img7.jpg';
+export { default as img8 } from './img8.jpg';
+export { default as img9 } from './img9.jpg';
+export { default as img10 } from './img10.jpg';
+export { default as img11 } from './img11.jpg';
+export { default as img12 } from './img12.jpg';
+export { default as img13 } from './img13.jpg';
