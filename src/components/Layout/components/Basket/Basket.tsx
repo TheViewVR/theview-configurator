@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { useCart, Item } from 'react-use-cart';
 
 import Sum from 'components/Sum/Sum';
@@ -10,16 +10,12 @@ import {
   StyledTable,
   SumWrapper,
 } from './styled';
-import { INITIAL_BASKET_ITEMS, BASKET_TEXT } from './constants';
+import { BASKET_TEXT } from './constants';
 import { COLUMNS_CONFIG, TABLE_SCROLL_CONFIG } from './config';
 import { formatNumberWithSpaces } from './renders';
 
 const Basket: FC = () => {
-  const { items, setItems, cartTotal } = useCart();
-
-  useEffect(() => {
-    setItems(INITIAL_BASKET_ITEMS);
-  }, []);
+  const { items, cartTotal } = useCart();
 
   const calculateHosting = (items: Item[]) =>
     items.reduce(

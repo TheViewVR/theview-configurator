@@ -16,7 +16,7 @@ import {
 const ModalDialog: FC<IModalDialogProps> = ({
   cardContent,
   isModalOpened,
-  isCardSelected,
+  isAddButtonVisible,
   handleCloseModal,
   handleAddButtonClick,
   title,
@@ -50,13 +50,10 @@ const ModalDialog: FC<IModalDialogProps> = ({
               hosting={cardContent.hosting}
               isCardView={true}
             />
-            {!isCardSelected ? (
+            {isAddButtonVisible ? (
               <StyledButton onClick={handleAddButtonClick}>Add</StyledButton>
             ) : (
-              <NumberInput
-                cardContent={cardContent}
-                handleAddButtonClick={handleAddButtonClick}
-              />
+              <NumberInput cardContent={cardContent} />
             )}
           </div>
         </div>

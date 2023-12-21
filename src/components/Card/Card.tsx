@@ -31,21 +31,21 @@ export interface ICardContent {
 }
 
 const Card: FC<ICard> = ({ cardContent, isCardView }) => {
-  const [isCardSelected, setCardSelected] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const { addItem } = useCart();
+  const { addItem, inCart } = useCart();
 
   const { title, description, price, hosting, image } = cardContent;
 
   const handleAddButtonClick = () => {
-    setCardSelected(true);
     addItem(cardContent, 1);
   };
+
+  const isAddButtonVisible = !inCart(cardContent.id);
 
   return (
     <>
       <CardWrapper
-        isCardSelected={isCardSelected}
+        isCardSelected={!isAddButtonVisible}
         onClick={() => setIsModalVisible(true)}
       >
         <TextWrapper>
@@ -69,20 +69,17 @@ const Card: FC<ICard> = ({ cardContent, isCardView }) => {
           }}
         >
           <Sum price={price} hosting={hosting} isCardView={isCardView} />
-          {!isCardSelected ? (
+          {isAddButtonVisible ? (
             <StyledButton onClick={handleAddButtonClick}>Add</StyledButton>
           ) : (
-            <NumberInput
-              cardContent={cardContent}
-              handleAddButtonClick={handleAddButtonClick}
-            />
+            <NumberInput cardContent={cardContent} />
           )}
         </div>
       </CardWrapper>
       <ModalDialog
         cardContent={cardContent}
         isModalOpened={isModalVisible}
-        isCardSelected={isCardSelected}
+        isAddButtonVisible={isAddButtonVisible}
         handleCloseModal={() => setIsModalVisible(false)}
         handleAddButtonClick={handleAddButtonClick}
       />

@@ -8,9 +8,10 @@ import AddOnsSection from 'components/AddOnsSection/AddOnsSection';
 
 import { StyledContent, StyledLayout, StyledMainLayout } from './styled';
 import Basket from './components/Basket/Basket';
+import { INITIAL_BASKET_ITEMS } from './components/Basket/constants';
 
 const Layout: FC = () => (
-  <CartProvider>
+  <CartProvider defaultItems={INITIAL_BASKET_ITEMS}>
     <StyledMainLayout>
       <StyledLayout>
         <Header />
