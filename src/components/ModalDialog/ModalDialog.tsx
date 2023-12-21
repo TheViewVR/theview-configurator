@@ -53,7 +53,7 @@ const ModalDialog: FC<IModalDialogProps> = ({
             {isAddButtonVisible ? (
               <StyledButton onClick={handleAddButtonClick}>Add</StyledButton>
             ) : (
-              <NumberInput cardContent={cardContent} />
+              <NumberInput cardContent={cardContent} isModalView={true} />
             )}
           </div>
         </div>

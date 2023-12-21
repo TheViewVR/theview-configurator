@@ -69,7 +69,7 @@ export const CardText = styled('p')({
 
 export const StyledButton = styled(Button)({
   width: '80px',
-  height: '36px',
+  height: '38px',
   padding: '8px',
   borderRadius: '6px',
   color: COLORS.generalBlue,

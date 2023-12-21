@@ -13,9 +13,13 @@ import {
 
 export interface INumberInput {
   cardContent: ICardContent;
+  isModalView?: boolean;
 }
 
-const NumberInput: FC<INumberInput> = ({ cardContent }) => {
+const NumberInput: FC<INumberInput> = ({
+  cardContent,
+  isModalView = false,
+}) => {
   const { updateItemQuantity, getItem, updateItem } = useCart();
   const currentItem = getItem(cardContent?.id);
 
@@ -42,7 +46,13 @@ const NumberInput: FC<INumberInput> = ({ cardContent }) => {
       <ModifyerButtonLeft onClick={decrement}>
         <Minus />
       </ModifyerButtonLeft>
-      <Input type='text' value={value} readOnly min={1} />
+      <Input
+        type='text'
+        value={value}
+        readOnly
+        min={1}
+        isModalView={isModalView}
+      />
       <ModifyerButtonRight onClick={increment}>
         <Plus />
       </ModifyerButtonRight>

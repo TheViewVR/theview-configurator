@@ -2,6 +2,8 @@ import { styled } from 'styled-components';
 
 import { COLORS } from 'constants/colorPalette';
 
+import { IIsModalView } from './types';
+
 export const QuantityContainer = styled('div')({
   display: 'flex',
   justifyContent: 'center',
@@ -57,9 +59,9 @@ export const ModifyerButtonRight = styled(ModifyerButtonLeft)({
   borderRight: '1px solid #DCE1EB',
 });
 
-export const Input = styled('input')({
+export const Input = styled('input')<IIsModalView>(({ isModalView }) => ({
   width: '24px',
-  height: '36px',
+  height: isModalView ? '34px' : '36px',
   fontSize: '13px',
   border: 0,
   borderTop: '1px solid #DCE1EB',
@@ -67,7 +69,8 @@ export const Input = styled('input')({
   textAlign: 'center',
   fontFamily: 'Poppins, sans-serif',
   color: 'rgba(0, 0, 0, 0.90)',
+  outline: 'none',
   ':active': {
     border: 'none',
   },
-});
+}));
