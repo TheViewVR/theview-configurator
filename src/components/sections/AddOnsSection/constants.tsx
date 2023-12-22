@@ -18,7 +18,7 @@ export const CARDS_CONTENT = [
     title: 'Interior amenity Virtual Tour',
     description:
       'HDR 360 tour, delivers with the set of 3-5 still images. Can be embedded to the Apartment Card, your website and 3rd Party Platforms.',
-    image: <StyledCardImage src={img10} alt='img10' />,
+    image: <StyledCardImage src={img11} alt='img11' />,
     price: 5500,
     totalPrice: 5500,
     initialHosting: 4,
@@ -29,7 +29,7 @@ export const CARDS_CONTENT = [
     title: 'Exterior Amenity Virtual Tour',
     description:
       'HDR 360 tour, delivers with the set of 3-5 still images. Can be embedded to the Apartment Card, your website and 3rd Party Platforms.',
-    image: <StyledCardImage src={img11} alt='img11' />,
+    image: <StyledCardImage src={img12} alt='img12' />,
     price: 7300,
     totalPrice: 7300,
     initialHosting: 4,
@@ -40,7 +40,7 @@ export const CARDS_CONTENT = [
     title: 'Model Unit Virtual Tour',
     description:
       'Can be embedded to the Apartment Card, your website and 3rd Party Platforms',
-    image: <StyledCardImage src={img12} alt='img12' />,
+    image: <StyledCardImage src={img10} alt='img10' />,
     price: 4400,
     totalPrice: 4400,
     initialHosting: 4,
