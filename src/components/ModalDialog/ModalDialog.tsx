@@ -1,12 +1,14 @@
 import { FC } from 'react';
 
 import { Close } from 'assets/icons';
-import Sum from 'components/Sum/Sum';
-import NumberInput from 'components/NumberInput/NumberInput';
+import Sum from 'components/Sum';
+import NumberInput from 'components/NumberInput';
 import { StyledButton } from 'components/Card/styled';
+import { ADD_BUTTON_TEXT } from 'constants/common';
 
 import { IModalDialogProps } from './types';
 import {
+  ImageSectionWrapper,
   InnerWrapper,
   Modal,
   ModalContentWrapper,
@@ -15,7 +17,6 @@ import {
   ModalTitle,
   SumWrapper,
 } from './styled';
-import { ADD_BUTTON_TEXT } from 'constants/common';
 
 const ModalDialog: FC<IModalDialogProps> = ({
   cardContent,
