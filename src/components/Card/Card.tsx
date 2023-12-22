@@ -1,6 +1,8 @@
 import { FC } from 'react';
 
-import { Sum, NumberInput, ModalDialog } from 'components';
+import Sum from 'components/Sum';
+import NumberInput from 'components/NumberInput';
+import ModalDialog from 'components/ModalDialog';
 import { ADD_BUTTON_TEXT } from 'constants/common';
 
 import {

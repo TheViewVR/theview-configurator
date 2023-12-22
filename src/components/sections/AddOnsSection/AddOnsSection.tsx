@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
-import { Card } from 'components';
 import { ICardContent } from 'components/Card/types';
+import Card from 'components/Card';
+
 import {
   CardsWrapper,
   SectionTitle,

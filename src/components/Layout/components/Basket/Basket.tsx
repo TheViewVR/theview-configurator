@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react';
 import { useCart, Item } from 'react-use-cart';
 
-import Sum from 'components/Sum/Sum';
+import Sum from 'components/Sum';
 
 import {
   BasketTitle,

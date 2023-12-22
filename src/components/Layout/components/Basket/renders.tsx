@@ -2,7 +2,7 @@ import { ReactNode, useContext } from 'react';
 import { useCart } from 'react-use-cart';
 
 import { ICardContent } from 'components/Card/types';
-import { NumberInput } from 'components';
+import NumberInput from 'components/NumberInput';
 
 import { TableProduct, TableText } from './styled';
 import { TableContext } from './context';
