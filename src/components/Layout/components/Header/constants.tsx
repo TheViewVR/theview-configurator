@@ -11,12 +11,12 @@ export const ANCHOR_ITEMS = [
     title: MENU_ITEMS.standart,
   },
   {
-    key: 'content-section',
+    key: 'content-packs',
     href: '#content-packs',
     title: MENU_ITEMS.content,
   },
   {
-    key: 'addons-section',
+    key: 'preconstruction-addons',
     href: '#preconstruction-addons',
     title: MENU_ITEMS.addOns,
   },

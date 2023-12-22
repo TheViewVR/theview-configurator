@@ -61,7 +61,7 @@ export const ModifyerButtonRight = styled(ModifyerButtonLeft)({
 
 export const Input = styled('input')<IIsModalView>(({ isModalView }) => ({
   width: '24px',
-  height: isModalView ? '34px' : '36px',
+  height: isModalView ? '32px' : '36px',
   fontSize: '13px',
   border: 0,
   borderTop: '1px solid #DCE1EB',

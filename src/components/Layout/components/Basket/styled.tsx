@@ -4,12 +4,13 @@ import { styled } from 'styled-components';
 import { COLORS } from 'constants/colorPalette';
 
 export const BasketWrapper = styled('div')({
-  width: '360px',
+  backgroundColor: 'white',
   height: '100vh',
-  position: 'absolute',
-  backgroundColor: COLORS.white,
+  position: 'fixed',
   right: 0,
   top: 0,
+  bottom: 0,
+  zIndex: 1,
 });
 
 export const BasketTitleWrapper = styled('div')({
@@ -47,6 +48,9 @@ export const StyledTable = styled(Table)({
   },
   '& .ant-table-tbody>tr>td:first-child': {
     paddingLeft: '24px',
+  },
+  '& .ant-table-tbody > tr:hover > td': {
+    background: `${COLORS.lightBg} !important`,
   },
 });
 

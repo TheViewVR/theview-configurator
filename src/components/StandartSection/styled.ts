@@ -61,3 +61,7 @@ export const InfoBadge = styled('div')({
   fontSize: '11px',
   padding: '8px 12px',
 });
+
+export const StandartWrapper = styled('div')({
+  paddingTop: '10px',
+});

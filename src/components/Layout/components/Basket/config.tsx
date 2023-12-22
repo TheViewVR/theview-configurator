@@ -1,5 +1,5 @@
 import { TABLE_HEAD_TITLES, X_CONTENT_SCROLL } from './constants';
-import { renderMoneyDollars, renderProduct, renderQuantity } from './renders';
+import { renderActions, renderMoneyDollars, renderProduct } from './renders';
 
 export const COLUMNS_CONFIG = [
   {
@@ -26,8 +26,8 @@ export const COLUMNS_CONFIG = [
   {
     key: TABLE_HEAD_TITLES.QUANTITY,
     title: TABLE_HEAD_TITLES.QUANTITY,
-    dataIndex: 'quantity',
-    render: renderQuantity,
+    render: renderActions,
+    className: 'actions',
     width: 58,
   },
 ];

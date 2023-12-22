@@ -1,4 +1,8 @@
 import { ReactNode } from 'react';
+import { useCart } from 'react-use-cart';
+
+import { ICardContent } from 'components/Card/Card';
+import NumberInput from 'components/NumberInput/NumberInput';
 
 import { TableProduct, TableText } from './styled';
 
@@ -22,3 +26,16 @@ export const renderQuantity = (value: number): ReactNode => (
 export const renderProduct = (value: string): ReactNode => (
   <TableProduct>{value}</TableProduct>
 );
+
+export const renderActions = (cardContent: ICardContent): ReactNode => {
+  const { getItem } = useCart();
+
+  const currentItem = getItem(cardContent?.id);
+
+  const value = currentItem?.quantity;
+  return cardContent.id === '0' ? (
+    <TableText>{value}</TableText>
+  ) : (
+    <NumberInput cardContent={cardContent} isModalView={true} />
+  );
+};

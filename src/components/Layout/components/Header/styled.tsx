@@ -2,17 +2,13 @@ import styled from 'styled-components';
 import { Anchor } from 'antd';
 
 import { COLORS } from 'constants/colorPalette';
-import { BASKET_WIDTH } from 'constants/menu';
 
 export const HeaderWrapper = styled('div')({
   display: 'flex',
   justifyContent: 'flex-start',
   alignItems: 'center',
   gap: '140px',
-  width: `calc(100vw - ${BASKET_WIDTH})`,
-  padding: '24px 40px 25px 40px',
   background: COLORS.lightBg,
-  position: 'sticky',
   fontFamily: 'Poppins, sans-serif',
 });
 
@@ -26,7 +22,6 @@ export const MenuItem = styled(Anchor)({
   height: '31px',
   fontWeight: 600,
   lineHeight: '15px',
-
   color: COLORS.generalBlack,
   cursor: 'default',
   span: {
