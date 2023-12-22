@@ -1,5 +1,5 @@
 import { img10, img11, img12, img13, img9 } from 'assets/images';
-import { StyledCardImage } from 'components/ContentSection/styled';
+import { StyledCardImage } from 'components/sections/ContentSection/styled';
 
 export const CARDS_CONTENT = [
   {
@@ -57,3 +57,5 @@ export const CARDS_CONTENT = [
     hosting: 0,
   },
 ];
+
+export const SECTION_TITLE = 'Preconstruction Add-ons';

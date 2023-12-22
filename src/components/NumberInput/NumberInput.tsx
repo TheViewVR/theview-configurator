@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useCart } from 'react-use-cart';
 
 import { Minus, Plus } from 'assets/icons';
-import { ICardContent } from 'components/Card/Card';
+import { ICardContent } from 'components/Card/types';
 
 import {
   Input,

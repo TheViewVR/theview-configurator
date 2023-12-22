@@ -1,4 +1,8 @@
-import { TABLE_HEAD_TITLES, X_CONTENT_SCROLL } from './constants';
+import {
+  TABLE_HEAD_TITLES,
+  X_CONTENT_SCROLL,
+  Y_CONTENT_SCROLL,
+} from './constants';
 import { renderActions, renderMoneyDollars, renderProduct } from './renders';
 
 export const COLUMNS_CONFIG = [
@@ -37,5 +41,5 @@ export const COLUMNS_CONFIG = [
 
 export const TABLE_SCROLL_CONFIG = {
   x: X_CONTENT_SCROLL,
-  y: 450,
+  y: Y_CONTENT_SCROLL,
 };

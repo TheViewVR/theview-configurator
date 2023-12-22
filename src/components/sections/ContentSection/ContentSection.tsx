@@ -1,12 +1,15 @@
 import { FC } from 'react';
 
+import Card from 'components/Card';
+import { ICardContent } from 'components/Card/types';
+import { ANCHOR_ID } from 'constants/common';
+
 import { CardsWrapper, SectionTitle, StyledSectionWrapper } from './styled';
-import Card, { ICardContent } from '../Card/Card';
-import { CARDS_CONTENT } from './constants';
+import { CARDS_CONTENT, CONTENT_SECTION_TITLE } from './constants';
 
 const ContentSection: FC = () => (
-  <StyledSectionWrapper id='content-packs'>
-    <SectionTitle>Content Packs</SectionTitle>
+  <StyledSectionWrapper id={ANCHOR_ID.PRECONSTRUCTION_ADDNONS}>
+    <SectionTitle>{CONTENT_SECTION_TITLE}</SectionTitle>
     <CardsWrapper>
       {CARDS_CONTENT.map((cardContent: ICardContent) => (
         <Card

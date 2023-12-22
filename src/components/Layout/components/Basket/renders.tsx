@@ -1,8 +1,8 @@
 import { ReactNode, useContext } from 'react';
 import { useCart } from 'react-use-cart';
 
-import { ICardContent } from 'components/Card/Card';
-import NumberInput from 'components/NumberInput/NumberInput';
+import { ICardContent } from 'components/Card/types';
+import { NumberInput } from 'components';
 
 import { TableProduct, TableText } from './styled';
 import { TableContext } from './context';
@@ -30,7 +30,7 @@ export const renderProduct = (value: string): ReactNode => (
 
 export const renderActions = (
   cardContent: ICardContent,
-  _: any,
+  _: unknown,
   idx: number,
 ): ReactNode => {
   const { getItem } = useCart();

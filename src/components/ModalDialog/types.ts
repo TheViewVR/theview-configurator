@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { ModalProps } from 'antd';
-import { ICardContent } from 'components/Card/Card';
+import { ICardContent } from 'components/Card/types';
 
 export interface IModalDialogProps extends ModalProps {
   isModalOpened: boolean;

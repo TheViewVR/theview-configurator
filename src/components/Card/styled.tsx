@@ -91,3 +91,15 @@ export const StyledButton = styled(Button)({
 export const StyledArrowsOutSimple = styled(ArrowsOutSimple)({
   display: 'none',
 });
+
+export const TitleWrapper = styled('div')({
+  display: 'flex',
+  justifyContent: 'space-between',
+});
+
+export const CardFooter = styled('div')({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '38px',
+  padding: '0 20px',
+});

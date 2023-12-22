@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import { standartSectionImage } from 'assets/images';
 import Sum from 'components/Sum';
+import { ANCHOR_ID } from 'constants/common';
 
 import {
   ImageSection,
@@ -17,7 +18,7 @@ import {
 import { LIST_ITEMS, STANDART_SECTION_TEXT, STANDART_SUM } from './constants';
 
 const StandartSection: FC = () => (
-  <StandartWrapper id='standart-package'>
+  <StandartWrapper id={ANCHOR_ID.STANDART_PACKAGE}>
     <SectionWrapper>
       <ImageSection>
         <SectionTitle>{STANDART_SECTION_TEXT.title}</SectionTitle>

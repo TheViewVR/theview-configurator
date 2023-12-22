@@ -91,3 +91,5 @@ export const CARDS_CONTENT = [
     hosting: 0,
   },
 ];
+
+export const CONTENT_SECTION_TITLE = 'Content Packs';

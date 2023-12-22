@@ -3,9 +3,9 @@ import { CartProvider } from 'react-use-cart';
 import { Layout as AntLayout } from 'antd';
 
 import Header from 'components/Layout/components/Header/Header';
-import StandartSection from 'components/StandartSection/StandartSection';
-import ContentSection from 'components/ContentSection/ContentSection';
-import AddOnsSection from 'components/AddOnsSection/AddOnsSection';
+import StandartSection from 'components/sections/StandartSection/StandartSection';
+import ContentSection from 'components/sections/ContentSection/ContentSection';
+import AddOnsSection from 'components/sections/AddOnsSection';
 import { COLORS } from 'constants/colorPalette';
 
 import {

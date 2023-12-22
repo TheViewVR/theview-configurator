@@ -1,17 +1,19 @@
 import { FC } from 'react';
 
+import { Card } from 'components';
+import { ICardContent } from 'components/Card/types';
 import {
   CardsWrapper,
   SectionTitle,
   StyledSectionWrapper,
-} from 'components/ContentSection/styled';
+} from 'components/sections/ContentSection/styled';
+import { ANCHOR_ID } from 'constants/common';
 
-import Card, { ICardContent } from '../Card/Card';
-import { CARDS_CONTENT } from './constants';
+import { CARDS_CONTENT, SECTION_TITLE } from './constants';
 
 const AddOnsSection: FC = () => (
-  <StyledSectionWrapper id='preconstruction-addons'>
-    <SectionTitle>Preconstruction Add-ons</SectionTitle>
+  <StyledSectionWrapper id={ANCHOR_ID.PRECONSTRUCTION_ADDNONS}>
+    <SectionTitle>{SECTION_TITLE}</SectionTitle>
     <CardsWrapper>
       {CARDS_CONTENT.map((cardContent: ICardContent) => (
         <Card

@@ -18,6 +18,8 @@ export const StyledHeader = styled(Header)({
   width: '100%',
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'flex-start',
+  paddingLeft: '40px',
   height: '80px',
   background: COLORS.lightBg,
   '@media (min-width: 1360px)': {

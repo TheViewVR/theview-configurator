@@ -1,69 +1,47 @@
-import { FC, useState } from 'react';
-import { useCart } from 'react-use-cart';
+import { FC } from 'react';
 
-import Sum from 'components/Sum/Sum';
-import NumberInput from 'components/NumberInput/NumberInput';
-import ModalDialog from 'components/ModalDialog/ModalDialog';
+import { Sum, NumberInput, ModalDialog } from 'components';
+import { ADD_BUTTON_TEXT } from 'constants/common';
 
 import {
+  CardFooter,
   CardText,
   CardTitle,
   CardWrapper,
   StyledArrowsOutSimple,
   StyledButton,
   TextWrapper,
+  TitleWrapper,
 } from './styled';
+import { ICard } from './types';
 
-export interface ICard {
-  cardContent: ICardContent;
-  isCardView?: boolean;
-}
-
-export interface ICardContent {
-  id: string;
-  title: string;
-  description: string;
-  image: JSX.Element;
-  price: number;
-  hosting: number;
-  initialHosting: number;
-  totalPrice: number;
-}
-
-const Card: FC<ICard> = ({ cardContent, isCardView }) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const { addItem, inCart } = useCart();
-
+const Card: FC<ICard> = ({
+  cardContent,
+  isCardView,
+  isModalVisible,
+  isPlusDisabled,
+  isAddButtonVisible,
+  handleAddButtonClick,
+  handleOpenModal,
+  handleCloseModal,
+}) => {
   const { title, description, price, hosting, image } = cardContent;
-
-  const handleAddButtonClick = () => {
-    addItem(cardContent, 1);
-  };
-
-  const isAddButtonVisible = !inCart(cardContent.id);
-  const isPlusDisabled = ['6', '9'].includes(cardContent.id);
 
   return (
     <>
       <CardWrapper
         isCardSelected={!isAddButtonVisible}
-        onClick={() => setIsModalVisible(true)}
+        onClick={handleOpenModal}
       >
         <TextWrapper>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <TitleWrapper>
             <CardTitle>{title}</CardTitle>
             <StyledArrowsOutSimple />
-          </div>
+          </TitleWrapper>
           <CardText>{description}</CardText>
         </TextWrapper>
         {image}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '38px',
-            padding: '0 20px',
-          }}
+        <CardFooter
           onClick={(e) => {
             e.stopPropagation();
             e.preventDefault();
@@ -71,20 +49,22 @@ const Card: FC<ICard> = ({ cardContent, isCardView }) => {
         >
           <Sum price={price} hosting={hosting} isCardView={isCardView} />
           {isAddButtonVisible ? (
-            <StyledButton onClick={handleAddButtonClick}>Add</StyledButton>
+            <StyledButton onClick={handleAddButtonClick}>
+              {ADD_BUTTON_TEXT}
+            </StyledButton>
           ) : (
             <NumberInput
               cardContent={cardContent}
               isPlusDisabled={isPlusDisabled}
             />
           )}
-        </div>
+        </CardFooter>
       </CardWrapper>
       <ModalDialog
         cardContent={cardContent}
         isModalOpened={isModalVisible}
         isAddButtonVisible={isAddButtonVisible}
-        handleCloseModal={() => setIsModalVisible(false)}
+        handleCloseModal={handleCloseModal}
         handleAddButtonClick={handleAddButtonClick}
       />
     </>
