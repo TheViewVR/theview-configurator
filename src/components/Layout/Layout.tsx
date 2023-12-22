@@ -14,7 +14,7 @@ import {
   StyledLayout,
   StyledMainLayout,
 } from './styled';
-import Basket from './components/Basket/Basket';
+import Basket from './components/Basket';
 import { INITIAL_BASKET_ITEMS } from './components/Basket/constants';
 
 const { Sider } = AntLayout;

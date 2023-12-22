@@ -1,22 +1,23 @@
 import {
+  BASKET_FIELDS,
   TABLE_HEAD_TITLES,
   X_CONTENT_SCROLL,
   Y_CONTENT_SCROLL,
 } from './constants';
-import { renderActions, renderMoneyDollars, renderProduct } from './renders';
+import { renderQuantity, renderMoneyDollars, renderProduct } from './renders';
 
 export const COLUMNS_CONFIG = [
   {
     key: TABLE_HEAD_TITLES.PRODUCT,
     title: TABLE_HEAD_TITLES.PRODUCT,
     render: renderProduct,
-    dataIndex: 'title',
+    dataIndex: BASKET_FIELDS.TITLE,
     width: 120,
   },
   {
     key: TABLE_HEAD_TITLES.PRICE,
     title: TABLE_HEAD_TITLES.PRICE,
-    dataIndex: 'totalPrice',
+    dataIndex: BASKET_FIELDS.PRICE,
     align: 'right' as const,
     render: renderMoneyDollars,
     width: 52,
@@ -24,7 +25,7 @@ export const COLUMNS_CONFIG = [
   {
     key: TABLE_HEAD_TITLES.HOSTING,
     title: TABLE_HEAD_TITLES.HOSTING,
-    dataIndex: 'hosting',
+    dataIndex: BASKET_FIELDS.HOSTING,
     align: 'right' as const,
     render: renderMoneyDollars,
     width: 48,
@@ -32,9 +33,8 @@ export const COLUMNS_CONFIG = [
   {
     key: TABLE_HEAD_TITLES.QUANTITY,
     title: TABLE_HEAD_TITLES.QUANTITY,
-    render: renderActions,
+    render: renderQuantity,
     align: 'center' as const,
-    className: 'actions',
     width: 58,
   },
 ];

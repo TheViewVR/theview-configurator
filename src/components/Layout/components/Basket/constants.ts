@@ -20,10 +20,10 @@ export const INITIAL_BASKET_ITEMS = [
 ];
 
 export const BASKET_FIELDS = {
-  PRODUCT: 'PRODUCT',
-  PRICE: 'PRICE',
-  HOSTING: 'HOSTING',
-  QUANTITY: 'QUANTITY',
+  TITLE: 'title',
+  PRICE: 'totalPrice',
+  HOSTING: 'hosting',
+  QUANTITY: 'quantity',
 };
 
 export const TABLE_HEAD_TITLES = {

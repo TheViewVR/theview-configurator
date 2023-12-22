@@ -1,0 +1,7 @@
+import { Item } from 'react-use-cart';
+
+export interface IBasket {
+  totalHosting: number;
+  cartTotal: number;
+  items: Item[];
+}

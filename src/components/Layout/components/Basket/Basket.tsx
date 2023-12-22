@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react';
-import { useCart, Item } from 'react-use-cart';
 
 import Sum from 'components/Sum';
+import { formatNumberWithSpaces } from 'utils';
 
 import {
   BasketTitle,
@@ -12,20 +12,10 @@ import {
 } from './styled';
 import { BASKET_TEXT } from './constants';
 import { COLUMNS_CONFIG, TABLE_SCROLL_CONFIG } from './config';
-import { formatNumberWithSpaces } from './renders';
-import TableContextProvider, { TableContext } from './context';
+import { TableContext } from './context';
+import { IBasket } from './types';
 
-const BasketContainer: FC = () => {
-  const { items, cartTotal } = useCart();
-
-  const calculateHosting = (items: Item[]) =>
-    items.reduce(
-      (total, item) => total + item.quantity! * item['initialHosting'],
-      0,
-    );
-
-  const totalHosting = calculateHosting(items);
-
+const Basket: FC<IBasket> = ({ totalHosting, cartTotal, items }) => {
   const context = useContext(TableContext);
 
   return (
@@ -41,7 +31,7 @@ const BasketContainer: FC = () => {
         onRow={(_, index) => {
           return {
             onMouseEnter: () => {
-              if (index !== undefined) {
+              if (index) {
                 context.setState((currentState: any) => ({
                   ...currentState,
                   [index.toString()]: true,
@@ -49,7 +39,7 @@ const BasketContainer: FC = () => {
               }
             },
             onMouseLeave: () => {
-              if (index !== undefined) {
+              if (index) {
                 context.setState((currentState: any) => ({
                   ...currentState,
                   [index.toString()]: false,
@@ -67,14 +57,6 @@ const BasketContainer: FC = () => {
         />
       </SumWrapper>
     </BasketWrapper>
-  );
-};
-
-const Basket = () => {
-  return (
-    <TableContextProvider>
-      <BasketContainer />
-    </TableContextProvider>
   );
 };
 
