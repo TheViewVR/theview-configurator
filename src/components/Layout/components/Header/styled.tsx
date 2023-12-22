@@ -9,6 +9,7 @@ export const HeaderWrapper = styled('div')({
   alignItems: 'center',
   gap: '140px',
   background: COLORS.lightBg,
+  padding: '24px 40px 25px 40px',
   fontFamily: 'Poppins, sans-serif',
 });
 

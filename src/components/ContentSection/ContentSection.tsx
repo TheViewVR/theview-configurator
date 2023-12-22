@@ -1,8 +1,6 @@
 import { FC } from 'react';
 
-import { SectionTitle } from 'components/StandartSection/styled';
-
-import { CardsWrapper, StyledSectionWrapper } from './styled';
+import { CardsWrapper, SectionTitle, StyledSectionWrapper } from './styled';
 import Card, { ICardContent } from '../Card/Card';
 import { CARDS_CONTENT } from './constants';
 

@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import { COLORS } from 'constants/colorPalette';
 
 export const StyledSectionWrapper = styled('div')({
-  marginTop: '40px',
+  marginTop: '28px',
   background: COLORS.lightBg,
   width: '920px',
   display: 'flex',
@@ -23,4 +23,11 @@ export const CardsWrapper = styled('div')({
   gap: '28px',
   marginTop: '28px',
   flexWrap: 'wrap',
+});
+
+export const SectionTitle = styled('h1')({
+  fontWeight: 600,
+  fontSize: '20px',
+  color: '#000000E5',
+  margin: 0,
 });

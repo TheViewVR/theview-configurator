@@ -2,9 +2,9 @@ import { FC } from 'react';
 
 import {
   CardsWrapper,
+  SectionTitle,
   StyledSectionWrapper,
 } from 'components/ContentSection/styled';
-import { SectionTitle } from 'components/StandartSection/styled';
 
 import Card, { ICardContent } from '../Card/Card';
 import { CARDS_CONTENT } from './constants';

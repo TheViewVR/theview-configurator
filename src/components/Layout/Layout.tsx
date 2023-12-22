@@ -8,11 +8,16 @@ import ContentSection from 'components/ContentSection/ContentSection';
 import AddOnsSection from 'components/AddOnsSection/AddOnsSection';
 import { COLORS } from 'constants/colorPalette';
 
-import { StyledContent, StyledLayout, StyledMainLayout } from './styled';
+import {
+  StyledContent,
+  StyledHeader,
+  StyledLayout,
+  StyledMainLayout,
+} from './styled';
 import Basket from './components/Basket/Basket';
 import { INITIAL_BASKET_ITEMS } from './components/Basket/constants';
 
-const { Header: AntHeader, Sider } = AntLayout;
+const { Sider } = AntLayout;
 
 const Layout: FC = () => {
   const topRef = useRef<HTMLDivElement>(null);
@@ -35,22 +40,9 @@ const Layout: FC = () => {
           <Basket />
         </Sider>
         <StyledLayout>
-          <AntHeader
-            ref={topRef}
-            style={{
-              position: 'sticky',
-              top: 0,
-              zIndex: 0,
-              width: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              height: '80px',
-              padding: '24px 40px 25px 40px',
-              background: COLORS.lightBg,
-            }}
-          >
+          <StyledHeader ref={topRef}>
             <Header />
-          </AntHeader>
+          </StyledHeader>
           <StyledContent id='scrollable'>
             <StandartSection />
             <ContentSection />
