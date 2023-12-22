@@ -1,10 +1,11 @@
-import { ReactNode } from 'react';
+import { ReactNode, useContext } from 'react';
 import { useCart } from 'react-use-cart';
 
 import { ICardContent } from 'components/Card/Card';
 import NumberInput from 'components/NumberInput/NumberInput';
 
 import { TableProduct, TableText } from './styled';
+import { TableContext } from './context';
 
 const REPLACE_PATTERN = /\B(?=(\d{3})+(?!\d))/g;
 export const EMPTY_STRING_WITH_WHITESPACE = ' ';
@@ -27,15 +28,33 @@ export const renderProduct = (value: string): ReactNode => (
   <TableProduct>{value}</TableProduct>
 );
 
-export const renderActions = (cardContent: ICardContent): ReactNode => {
+export const renderActions = (
+  cardContent: ICardContent,
+  _: any,
+  idx: number,
+): ReactNode => {
   const { getItem } = useCart();
+  const context = useContext(TableContext);
 
   const currentItem = getItem(cardContent?.id);
-
   const value = currentItem?.quantity;
-  return cardContent.id === '0' ? (
-    <TableText>{value}</TableText>
+
+  const isHovered = context.state[idx];
+
+  const isPlusDisabled = ['6', '9'].includes(cardContent.id);
+
+  if (cardContent.id === '0') {
+    return <TableText>{value}</TableText>;
+  }
+
+  return isHovered ? (
+    <NumberInput
+      isBasketView={true}
+      cardContent={cardContent}
+      isModalView={true}
+      isPlusDisabled={isPlusDisabled}
+    />
   ) : (
-    <NumberInput cardContent={cardContent} isModalView={true} />
+    <TableText>{value}</TableText>
   );
 };

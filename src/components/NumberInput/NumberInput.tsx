@@ -13,12 +13,16 @@ import {
 
 export interface INumberInput {
   cardContent: ICardContent;
+  isBasketView?: boolean;
   isModalView?: boolean;
+  isPlusDisabled?: boolean;
 }
 
 const NumberInput: FC<INumberInput> = ({
   cardContent,
+  isBasketView = false,
   isModalView = false,
+  isPlusDisabled = false,
 }) => {
   const { updateItemQuantity, getItem, updateItem } = useCart();
   const currentItem = getItem(cardContent?.id);
@@ -28,21 +32,21 @@ const NumberInput: FC<INumberInput> = ({
   const increment = () => {
     updateItemQuantity(currentItem?.id, currentItem?.quantity + 1);
     updateItem(currentItem?.id, {
-      hosting: currentItem?.hosting + cardContent?.hosting,
-      totalPrice: currentItem?.totalPrice + cardContent?.totalPrice,
+      hosting: currentItem?.hosting + currentItem?.initialHosting,
+      totalPrice: currentItem?.totalPrice + currentItem?.price,
     });
   };
 
   const decrement = () => {
     updateItemQuantity(currentItem?.id, currentItem?.quantity - 1);
     updateItem(currentItem?.id, {
-      hosting: currentItem?.hosting - cardContent?.hosting,
-      totalPrice: currentItem?.totalPrice - cardContent?.totalPrice,
+      hosting: currentItem?.hosting - currentItem?.initialHosting,
+      totalPrice: currentItem?.totalPrice - currentItem?.price,
     });
   };
 
   return (
-    <QuantityContainer>
+    <QuantityContainer isBasketView={isBasketView}>
       <ModifyerButtonLeft onClick={decrement}>
         <Minus />
       </ModifyerButtonLeft>
@@ -53,8 +57,8 @@ const NumberInput: FC<INumberInput> = ({
         min={1}
         isModalView={isModalView}
       />
-      <ModifyerButtonRight onClick={increment}>
-        <Plus />
+      <ModifyerButtonRight onClick={increment} disabled={isPlusDisabled}>
+        {!isPlusDisabled && <Plus />}
       </ModifyerButtonRight>
     </QuantityContainer>
   );

@@ -2,31 +2,40 @@ import { styled } from 'styled-components';
 
 import { COLORS } from 'constants/colorPalette';
 
-import { IIsModalView } from './types';
+import { IIsBasketView, IIsModalView } from './types';
 
-export const QuantityContainer = styled('div')({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '40px',
-  borderRadius: '6px',
-  '&:hover button': {
-    border: '1px solid #2250FC',
-  },
-  '&:hover button:first-child': {
-    borderRight: 'none',
-  },
-  '&:hover button:last-child': {
-    borderLeft: 'none',
-  },
-  '&:hover input': {
-    borderTop: '1px solid #2250FC',
-    borderBottom: '1px solid #2250FC',
-  },
-  '&:hover button svg path': {
-    stroke: '#2250FC',
-  },
-});
+export const QuantityContainer = styled('div')<IIsBasketView>(
+  ({ isBasketView }) => ({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: isBasketView ? '28px' : '40px',
+    borderRadius: '6px',
+    '&:hover button': {
+      border: '1px solid #2250FC',
+    },
+    '&:hover button:first-child': {
+      borderRight: 'none',
+    },
+    '&:hover button:last-child': {
+      borderLeft: 'none',
+    },
+    '&:hover input': {
+      borderTop: '1px solid #2250FC',
+      borderBottom: '1px solid #2250FC',
+    },
+    '&:hover button svg path': {
+      stroke: '#2250FC',
+    },
+    // '& button:disabled': {
+    //   cursor: 'not-allowed',
+    // },
+    // '& button:disabled:hover': {
+    //   background: COLORS.border,
+    //   pointerEvents: none,
+    // },
+  }),
+);
 
 export const ModifyerButtonLeft = styled('button')({
   userSelect: 'none',
@@ -43,13 +52,16 @@ export const ModifyerButtonLeft = styled('button')({
   borderRight: 'none',
   cursor: 'pointer',
   borderRadius: '6px 0 0 6px',
-  '&:hover ': {
+  '&:hover:not([disabled])': {
     background: 'rgba(34, 80, 252, 0.16)',
     borderRight: 'none',
   },
-  '&:active ': {
+  '&:active:not([disabled]) ': {
     background: 'rgba(34, 80, 252, 0.2)',
     borderRight: 'none',
+  },
+  '&[disabled]': {
+    cursor: 'default',
   },
 });
 

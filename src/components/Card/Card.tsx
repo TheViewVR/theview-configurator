@@ -41,6 +41,7 @@ const Card: FC<ICard> = ({ cardContent, isCardView }) => {
   };
 
   const isAddButtonVisible = !inCart(cardContent.id);
+  const isPlusDisabled = ['6', '9'].includes(cardContent.id);
 
   return (
     <>
@@ -72,7 +73,10 @@ const Card: FC<ICard> = ({ cardContent, isCardView }) => {
           {isAddButtonVisible ? (
             <StyledButton onClick={handleAddButtonClick}>Add</StyledButton>
           ) : (
-            <NumberInput cardContent={cardContent} />
+            <NumberInput
+              cardContent={cardContent}
+              isPlusDisabled={isPlusDisabled}
+            />
           )}
         </div>
       </CardWrapper>
