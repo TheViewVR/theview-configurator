@@ -2,10 +2,11 @@ import { FC, useRef } from 'react';
 import { CartProvider } from 'react-use-cart';
 import { Layout as AntLayout } from 'antd';
 
-import Header from 'components/Layout/components/Header/Header';
-import StandartSection from 'components/sections/StandartSection/StandartSection';
-import ContentSection from 'components/sections/ContentSection/ContentSection';
+import Header from 'components/Layout/components/Header';
+import StandartSection from 'components/sections/StandartSection';
+import ContentSection from 'components/sections/ContentSection';
 import AddOnsSection from 'components/sections/AddOnsSection';
+import { SCROLLABLE_CONTAINER_ID } from 'constants/common';
 import { COLORS } from 'constants/colorPalette';
 
 import {
@@ -43,7 +44,7 @@ const Layout: FC = () => {
           <StyledHeader ref={topRef}>
             <Header />
           </StyledHeader>
-          <StyledContent id='scrollable'>
+          <StyledContent id={SCROLLABLE_CONTAINER_ID}>
             <StandartSection />
             <ContentSection />
             <AddOnsSection />

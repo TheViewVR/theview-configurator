@@ -7,11 +7,15 @@ import { StyledButton } from 'components/Card/styled';
 
 import { IModalDialogProps } from './types';
 import {
+  InnerWrapper,
   Modal,
   ModalContentWrapper,
+  ModalSectionWrapper,
   ModalSubtitle,
   ModalTitle,
+  SumWrapper,
 } from './styled';
+import { ADD_BUTTON_TEXT } from 'constants/common';
 
 const ModalDialog: FC<IModalDialogProps> = ({
   cardContent,
@@ -21,50 +25,48 @@ const ModalDialog: FC<IModalDialogProps> = ({
   handleAddButtonClick,
   title,
   ...props
-}) => (
-  <Modal
-    title={title}
-    visible={isModalOpened}
-    centered
-    onCancel={handleCloseModal}
-    footer={null}
-    closeIcon={<Close />}
-    width={920}
-    {...props}
-  >
-    <ModalContentWrapper>
-      <div style={{ display: 'flex', gap: '28px' }}>
-        <div style={{ width: '313px' }}>
-          <ModalTitle>{cardContent.title}</ModalTitle>
-          <ModalSubtitle>{cardContent.description}</ModalSubtitle>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'flex-start',
-              gap: '28px',
-            }}
-          >
-            <Sum
-              price={cardContent.price}
-              hosting={cardContent.hosting}
-              isCardView={true}
-            />
-            {isAddButtonVisible ? (
-              <StyledButton onClick={handleAddButtonClick}>Add</StyledButton>
-            ) : (
-              <NumberInput cardContent={cardContent} isModalView={true} />
-            )}
-          </div>
-        </div>
-        <div style={{ width: '483px', height: '362px' }}>
-          <div style={{ maxHeight: '100%', maxWidth: '100%' }}>
-            {cardContent.image}
-          </div>
-        </div>
-      </div>
-    </ModalContentWrapper>
-  </Modal>
-);
+}) => {
+  const { title: cardContentTitle, description } = cardContent;
+  return (
+    <Modal
+      title={title}
+      open={isModalOpened}
+      centered
+      onCancel={handleCloseModal}
+      footer={null}
+      closeIcon={<Close />}
+      width={920}
+      {...props}
+    >
+      <ModalContentWrapper>
+        <InnerWrapper>
+          <ModalSectionWrapper>
+            <ModalTitle>{cardContentTitle}</ModalTitle>
+            <ModalSubtitle>{description}</ModalSubtitle>
+            <SumWrapper>
+              <Sum
+                price={cardContent.price}
+                hosting={cardContent.hosting}
+                isCardView={true}
+              />
+              {isAddButtonVisible ? (
+                <StyledButton onClick={handleAddButtonClick}>
+                  {ADD_BUTTON_TEXT}
+                </StyledButton>
+              ) : (
+                <NumberInput cardContent={cardContent} isModalView={true} />
+              )}
+            </SumWrapper>
+          </ModalSectionWrapper>
+          <ImageSectionWrapper>
+            <div style={{ maxHeight: '100%', maxWidth: '100%' }}>
+              {cardContent.image}
+            </div>
+          </ImageSectionWrapper>
+        </InnerWrapper>
+      </ModalContentWrapper>
+    </Modal>
+  );
+};
 
 export default ModalDialog;

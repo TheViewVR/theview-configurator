@@ -8,7 +8,7 @@ import { CardsWrapper, SectionTitle, StyledSectionWrapper } from './styled';
 import { CARDS_CONTENT, CONTENT_SECTION_TITLE } from './constants';
 
 const ContentSection: FC = () => (
-  <StyledSectionWrapper id={ANCHOR_ID.PRECONSTRUCTION_ADDNONS}>
+  <StyledSectionWrapper id={ANCHOR_ID.CONTENT_PACKS}>
     <SectionTitle>{CONTENT_SECTION_TITLE}</SectionTitle>
     <CardsWrapper>
       {CARDS_CONTENT.map((cardContent: ICardContent) => (

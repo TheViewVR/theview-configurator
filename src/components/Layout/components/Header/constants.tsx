@@ -1,3 +1,5 @@
+import { ANCHOR_ID } from 'constants/common';
+
 export const MENU_ITEMS = {
   standart: 'Standart package',
   content: 'Content Packs',
@@ -6,17 +8,17 @@ export const MENU_ITEMS = {
 
 export const ANCHOR_ITEMS = [
   {
-    key: 'standart-section',
+    key: ANCHOR_ID.STANDART_PACKAGE,
     href: '#standart-package',
     title: MENU_ITEMS.standart,
   },
   {
-    key: 'content-packs',
+    key: ANCHOR_ID.CONTENT_PACKS,
     href: '#content-packs',
     title: MENU_ITEMS.content,
   },
   {
-    key: 'preconstruction-addons',
+    key: ANCHOR_ID.PRECONSTRUCTION_ADDNONS,
     href: '#preconstruction-addons',
     title: MENU_ITEMS.addOns,
   },

@@ -50,3 +50,24 @@ export const ModalSubtitle = styled('p')({
   color: 'rgba(0, 0, 0, 0.50)',
   marginBottom: '32px',
 });
+
+export const InnerWrapper = styled('div')({
+  display: 'flex',
+  gap: '28px',
+});
+
+export const ModalSectionWrapper = styled('div')({
+  width: '313px',
+});
+
+export const SumWrapper = styled('div')({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
+  gap: '28px',
+});
+
+export const ImageSectionWrapper = styled('div')({
+  width: '483px',
+  height: '362px',
+});
