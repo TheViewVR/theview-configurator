@@ -43,7 +43,7 @@ export const StyledTable = styled(Table)({
   },
   '& .ant-table-tbody>tr>td': {
     padding: '4px 0px',
-    height: '28px',
+    height: '46px',
     borderBottom: '1px dashed #DCE1EB',
   },
   '& .ant-table-tbody>tr>td:first-child': {

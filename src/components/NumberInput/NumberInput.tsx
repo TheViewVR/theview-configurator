@@ -47,7 +47,7 @@ const NumberInput: FC<INumberInput> = ({
 
   return (
     <QuantityContainer isBasketView={isBasketView}>
-      <ModifyerButtonLeft onClick={decrement}>
+      <ModifyerButtonLeft onClick={decrement} isBasketView={isBasketView}>
         <Minus />
       </ModifyerButtonLeft>
       <Input
@@ -56,8 +56,13 @@ const NumberInput: FC<INumberInput> = ({
         readOnly
         min={1}
         isModalView={isModalView}
+        isBasketView={isBasketView}
       />
-      <ModifyerButtonRight onClick={increment} disabled={isPlusDisabled}>
+      <ModifyerButtonRight
+        onClick={increment}
+        disabled={isPlusDisabled}
+        isBasketView={isBasketView}
+      >
         {!isPlusDisabled && <Plus />}
       </ModifyerButtonRight>
     </QuantityContainer>
