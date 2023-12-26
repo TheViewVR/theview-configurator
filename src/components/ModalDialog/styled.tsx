@@ -71,3 +71,8 @@ export const ImageSectionWrapper = styled('div')({
   width: '483px',
   height: '362px',
 });
+
+export const ImageWrapper = styled('div')({
+  maxHeight: '100%',
+  maxWidth: '100%',
+});

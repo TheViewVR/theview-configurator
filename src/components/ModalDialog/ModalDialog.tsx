@@ -9,6 +9,7 @@ import { ADD_BUTTON_TEXT } from 'constants/common';
 import { IModalDialogProps } from './types';
 import {
   ImageSectionWrapper,
+  ImageWrapper,
   InnerWrapper,
   Modal,
   ModalContentWrapper,
@@ -60,9 +61,7 @@ const ModalDialog: FC<IModalDialogProps> = ({
             </SumWrapper>
           </ModalSectionWrapper>
           <ImageSectionWrapper>
-            <div style={{ maxHeight: '100%', maxWidth: '100%' }}>
-              {cardContent.image}
-            </div>
+            <ImageWrapper>{cardContent.image}</ImageWrapper>
           </ImageSectionWrapper>
         </InnerWrapper>
       </ModalContentWrapper>

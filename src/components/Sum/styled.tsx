@@ -1,3 +1,4 @@
+import { Divider } from 'antd';
 import { styled } from 'styled-components';
 
 export interface ISumText {
@@ -53,4 +54,14 @@ export const SumWrapper = styled('div')({
   width: '130px',
   minWidth: '130px',
   maxWidth: '130px',
+});
+
+export const StyledDivider = styled(Divider)({
+  height: '36px',
+  margin: 0,
+});
+
+export const InnerWrapper = styled('div')({
+  display: 'flex',
+  alignItems: 'flex-end',
 });

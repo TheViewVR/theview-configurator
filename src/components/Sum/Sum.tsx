@@ -1,50 +1,49 @@
 import { FC } from 'react';
-import { Divider } from 'antd';
 
 import {
+  InnerWrapper,
   MonthText,
+  StyledDivider,
   SumLeftSection,
   SumRightSection,
   SumText,
   SumWrapper,
   TypeText,
 } from './styled';
-
-export interface ISum {
-  price?: number | string;
-  hosting?: number | string;
-  isCardView?: boolean;
-  isBasketView?: boolean;
-}
+import { ISum } from './types';
+import { SUM_TEXT } from './constants';
+import { EMPTY_STRING } from 'constants/common';
 
 const Sum: FC<ISum> = ({
   price,
   hosting,
   isCardView,
   isBasketView = false,
-}) => {
-  return (
-    <SumWrapper>
-      <SumLeftSection isBasketView={isBasketView}>
+}) => (
+  <SumWrapper>
+    <SumLeftSection isBasketView={isBasketView}>
+      <SumText isCardView={isCardView}>
+        {price ? `$${price}` : SUM_TEXT.FREE}
+      </SumText>
+      <TypeText>
+        {SUM_TEXT.ONE_TIME} {!isCardView && SUM_TEXT.FEE}
+      </TypeText>
+    </SumLeftSection>
+    <StyledDivider type='vertical' />
+    <SumRightSection>
+      <InnerWrapper>
         <SumText isCardView={isCardView}>
-          {price ? `$${price}` : 'free'}
+          {hosting ? `$${hosting}` : SUM_TEXT.FREE}
         </SumText>
-        <TypeText>one-time {!isCardView && 'fee'}</TypeText>
-      </SumLeftSection>
-      <Divider type='vertical' style={{ height: '36px', margin: 0 }} />
-      <SumRightSection>
-        <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-          <SumText isCardView={isCardView}>
-            {hosting ? `$${hosting}` : 'free'}
-          </SumText>
-          <MonthText>
-            {hosting ? (isCardView ? '/mo' : '/month') : ''}
-          </MonthText>
-        </div>
-        <TypeText>hosting {!isCardView && 'fee'}</TypeText>
-      </SumRightSection>
-    </SumWrapper>
-  );
-};
+        <MonthText>
+          {hosting ? (isCardView ? SUM_TEXT.MO : SUM_TEXT.MONTH) : EMPTY_STRING}
+        </MonthText>
+      </InnerWrapper>
+      <TypeText>
+        {SUM_TEXT.HOSTING} {!isCardView && SUM_TEXT.FEE}
+      </TypeText>
+    </SumRightSection>
+  </SumWrapper>
+);
 
 export default Sum;
