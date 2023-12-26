@@ -78,11 +78,11 @@ export const StyledButton = styled(Button)({
   verticalAlign: 'center',
   fontSize: '13px',
   border: 'none',
-  '&:hover': {
+  '&:hover:not([disabled])': {
     color: `${COLORS.generalBlue} !important`,
     backgroundColor: 'rgba(34, 80, 252, 0.16)',
   },
-  '& .active': {
+  '&:active:not([disabled])': {
     color: `${COLORS.generalBlue} !important`,
     backgroundColor: 'rgba(34, 80, 252, 0.2)',
   },

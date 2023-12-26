@@ -15,6 +15,7 @@ const NumberInput: FC<INumberInput> = ({
   isBasketView = false,
   isModalView = false,
   isPlusDisabled = false,
+  isButtonsDisabled = false,
   handlePlusButtonClick,
   handleMinusButtonClick,
 }) => (
@@ -22,6 +23,7 @@ const NumberInput: FC<INumberInput> = ({
     <ModifyerButtonLeft
       onClick={handleMinusButtonClick}
       isBasketView={isBasketView}
+      disabled={isButtonsDisabled}
     >
       <Minus />
     </ModifyerButtonLeft>
@@ -35,7 +37,7 @@ const NumberInput: FC<INumberInput> = ({
     />
     <ModifyerButtonRight
       onClick={handlePlusButtonClick}
-      disabled={isPlusDisabled}
+      disabled={isPlusDisabled || isButtonsDisabled}
       isBasketView={isBasketView}
     >
       {!isPlusDisabled && <Plus />}

@@ -18,6 +18,7 @@ export interface ICard extends ICardContainer {
   isModalVisible: boolean;
   isAddButtonVisible: boolean;
   isPlusDisabled: boolean;
+  isAddButtonDisabled: boolean;
   handleAddButtonClick: () => void;
   handleOpenModal: () => void;
   handleCloseModal: () => void;

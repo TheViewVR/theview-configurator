@@ -19,6 +19,7 @@ export interface INumberInputContainer {
 export interface INumberInput
   extends Omit<INumberInputContainer, 'cardContent'> {
   value: number;
+  isButtonsDisabled: boolean;
   handleMinusButtonClick: () => void;
   handlePlusButtonClick: () => void;
 }

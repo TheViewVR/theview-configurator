@@ -23,12 +23,19 @@ const ModalDialog: FC<IModalDialogProps> = ({
   cardContent,
   isModalOpened,
   isAddButtonVisible,
+  isAddButtonDisabled,
   handleCloseModal,
   handleAddButtonClick,
   title,
   ...props
 }) => {
-  const { title: cardContentTitle, description } = cardContent;
+  const {
+    title: cardContentTitle,
+    description,
+    price,
+    hosting,
+    image,
+  } = cardContent;
   return (
     <Modal
       title={title}
@@ -46,13 +53,12 @@ const ModalDialog: FC<IModalDialogProps> = ({
             <ModalTitle>{cardContentTitle}</ModalTitle>
             <ModalSubtitle>{description}</ModalSubtitle>
             <SumWrapper>
-              <Sum
-                price={cardContent.price}
-                hosting={cardContent.hosting}
-                isCardView={true}
-              />
+              <Sum price={price} hosting={hosting} isCardView={true} />
               {isAddButtonVisible ? (
-                <StyledButton onClick={handleAddButtonClick}>
+                <StyledButton
+                  disabled={isAddButtonDisabled}
+                  onClick={handleAddButtonClick}
+                >
                   {ADD_BUTTON_TEXT}
                 </StyledButton>
               ) : (
@@ -61,7 +67,7 @@ const ModalDialog: FC<IModalDialogProps> = ({
             </SumWrapper>
           </ModalSectionWrapper>
           <ImageSectionWrapper>
-            <ImageWrapper>{cardContent.image}</ImageWrapper>
+            <ImageWrapper>{image}</ImageWrapper>
           </ImageSectionWrapper>
         </InnerWrapper>
       </ModalContentWrapper>

@@ -59,3 +59,14 @@ export const CARDS_CONTENT = [
 ];
 
 export const SECTION_TITLE = 'Preconstruction Add-ons';
+
+export const FREE_ADDONS_AUTO_ADDED_ITEM = {
+  id: '13',
+  title: 'Amenity/Model Unit Still Renderendings',
+  description: 'Part of the Rendered Virtual Tours',
+  image: <StyledCardImage src={img13} alt='img13' />,
+  price: 0,
+  totalPrice: 0,
+  initialHosting: 0,
+  hosting: 0,
+};

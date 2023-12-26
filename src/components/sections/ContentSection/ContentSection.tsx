@@ -14,7 +14,7 @@ const ContentSection: FC = () => (
       {CARDS_CONTENT.map((cardContent: ICardContent) => (
         <Card
           cardContent={cardContent}
-          key={cardContent.id}
+          key={cardContent?.id}
           isCardView={true}
         />
       ))}

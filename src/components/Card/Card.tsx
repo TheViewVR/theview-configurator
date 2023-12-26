@@ -22,6 +22,7 @@ const Card: FC<ICard> = ({
   isCardView,
   isModalVisible,
   isPlusDisabled,
+  isAddButtonDisabled,
   isAddButtonVisible,
   handleAddButtonClick,
   handleOpenModal,
@@ -51,7 +52,10 @@ const Card: FC<ICard> = ({
         >
           <Sum price={price} hosting={hosting} isCardView={isCardView} />
           {isAddButtonVisible ? (
-            <StyledButton onClick={handleAddButtonClick}>
+            <StyledButton
+              disabled={isAddButtonDisabled}
+              onClick={handleAddButtonClick}
+            >
               {ADD_BUTTON_TEXT}
             </StyledButton>
           ) : (
@@ -65,6 +69,7 @@ const Card: FC<ICard> = ({
       <ModalDialog
         cardContent={cardContent}
         isModalOpened={isModalVisible}
+        isAddButtonDisabled={isAddButtonDisabled}
         isAddButtonVisible={isAddButtonVisible}
         handleCloseModal={handleCloseModal}
         handleAddButtonClick={handleAddButtonClick}

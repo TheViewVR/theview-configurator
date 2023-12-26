@@ -56,7 +56,7 @@ export const ModifyerButtonLeft = styled('button')<IIsBasketView>(
       background: 'rgba(34, 80, 252, 0.2)',
     },
     '&[disabled]': {
-      cursor: 'default',
+      cursor: 'not-allowed',
     },
   }),
 );

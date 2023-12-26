@@ -4,6 +4,7 @@ import { useCart } from 'react-use-cart';
 import { ICardContent } from 'components/Card/types';
 import NumberInput from 'components/NumberInput';
 import {
+  NON_ADDABLE_ID_ARRAY,
   NON_INCREASING_ITEMS_ID_ARRAY,
   STANDART_PACKAGE_ID,
 } from 'constants/common';
@@ -33,9 +34,14 @@ export const renderQuantity = (
 
   const isHovered = context.state[idx];
 
-  const isPlusDisabled = NON_INCREASING_ITEMS_ID_ARRAY.includes(cardContent.id);
+  const isPlusDisabled = NON_INCREASING_ITEMS_ID_ARRAY.includes(
+    cardContent?.id,
+  );
 
-  if (cardContent.id === STANDART_PACKAGE_ID) {
+  if (
+    cardContent?.id === STANDART_PACKAGE_ID ||
+    NON_ADDABLE_ID_ARRAY.includes(cardContent?.id)
+  ) {
     return <TableText>{value}</TableText>;
   }
 

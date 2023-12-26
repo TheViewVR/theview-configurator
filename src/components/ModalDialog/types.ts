@@ -11,4 +11,5 @@ export interface IModalDialogProps extends ModalProps {
   subtitle?: string;
   children?: ReactNode;
   isAddButtonVisible?: boolean;
+  isAddButtonDisabled?: boolean;
 }

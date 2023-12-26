@@ -18,7 +18,7 @@ const AddOnsSection: FC = () => (
     <CardsWrapper>
       {CARDS_CONTENT.map((cardContent: ICardContent) => (
         <Card
-          key={cardContent.id}
+          key={cardContent?.id}
           cardContent={cardContent}
           isCardView={true}
         />

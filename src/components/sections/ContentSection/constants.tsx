@@ -92,4 +92,15 @@ export const CARDS_CONTENT = [
   },
 ];
 
+export const FREE_CONTENT_AUTO_ADDED_ITEM = {
+  id: '5',
+  title: 'Amenity/Model Unit Still Photos',
+  description: 'Part of the Virtual Tours',
+  image: <StyledCardImage src={img5} alt='img5' />,
+  price: 0,
+  totalPrice: 0,
+  initialHosting: 0,
+  hosting: 0,
+};
+
 export const CONTENT_SECTION_TITLE = 'Content Packs';
