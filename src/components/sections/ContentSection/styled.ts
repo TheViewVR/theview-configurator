@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import { COLORS } from 'constants/colorPalette';
 
 export const StyledSectionWrapper = styled('div')({
-  marginTop: '28px',
+  marginTop: '56px',
   background: COLORS.lightBg,
   width: '920px',
   display: 'flex',
