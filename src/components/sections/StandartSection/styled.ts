@@ -12,6 +12,10 @@ export const SectionWrapper = styled('div')({
   backgroundColor: COLORS.white,
   boxShadow:
     '0px 20px 40px 0px rgba(0, 34, 102, 0.10), 0px 4px 8px 0px rgba(0, 34, 102, 0.05), 0px 0px 0px 1px rgba(34, 80, 252, 0.20)',
+  '@media (min-width: 1520px)': {
+    width: '70vw',
+    justifyContent: 'center',
+  },
 });
 
 export const SectionTitle = styled('h1')({

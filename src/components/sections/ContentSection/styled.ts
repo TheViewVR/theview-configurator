@@ -10,6 +10,9 @@ export const StyledSectionWrapper = styled('div')({
   flexDirection: 'column',
   justifyContent: 'space-between',
   marginBottom: '40px',
+  '@media (min-width: 1520px)': {
+    width: '70vw',
+  },
 });
 
 export const StyledCardImage = styled('img')({
@@ -23,6 +26,10 @@ export const CardsWrapper = styled('div')({
   gap: '28px',
   marginTop: '28px',
   flexWrap: 'wrap',
+  '@media (min-width: 1776px)': {
+    justifyContent: 'space-between',
+    maxWidth: '70vw',
+  },
 });
 
 export const SectionTitle = styled('h1')({

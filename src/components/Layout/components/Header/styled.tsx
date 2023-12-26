@@ -10,6 +10,9 @@ export const HeaderWrapper = styled('div')({
   gap: '140px',
   background: COLORS.lightBg,
   fontFamily: 'Poppins, sans-serif',
+  '@media (min-width: 1360px)': {
+    width: '70vw',
+  },
 });
 
 export const MenuWrapper = styled('div')({
