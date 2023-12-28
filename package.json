@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/dinero.js": "^1.9.4",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.17",
