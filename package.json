@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,6 +11,8 @@
     "@types/styled-components": "^5.1.34",
     "antd": "^5.12.2",
     "dinero.js": "^1.9.1",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "less": "^4.2.0",
     "less-loader": "^11.1.3",
     "react": "^18.2.0",

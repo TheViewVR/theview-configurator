@@ -4,4 +4,5 @@ export interface IBasket {
   totalHosting: number;
   cartTotal: number;
   items: Item[];
+  handleDownloadPdf: (Component: HTMLDivElement) => Promise<void>;
 }

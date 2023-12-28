@@ -33,7 +33,7 @@ export const TABLE_HEAD_TITLES = {
   QUANTITY: 'Qty',
 };
 
-export const X_CONTENT_SCROLL = 360;
+export const X_CONTENT_SCROLL = 320;
 export const Y_CONTENT_SCROLL = 'calc(100vh - 79px - 100px)';
 
 export const INITIAL_BASKET_VALUES = {

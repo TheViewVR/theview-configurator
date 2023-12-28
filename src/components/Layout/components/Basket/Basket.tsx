@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react';
+import { FC, useContext, useRef } from 'react';
 
 import Sum from 'components/Sum';
 import { formatNumberWithSpaces } from 'utils';
@@ -7,6 +7,8 @@ import {
   BasketTitle,
   BasketTitleWrapper,
   BasketWrapper,
+  DownloadButtonWrapper,
+  DownloadIcon,
   StyledTable,
   SumWrapper,
 } from './styled';
@@ -15,11 +17,17 @@ import { COLUMNS_CONFIG, TABLE_SCROLL_CONFIG } from './config';
 import { TableContext } from './context';
 import { IBasket } from './types';
 
-const Basket: FC<IBasket> = ({ totalHosting, cartTotal, items }) => {
+const Basket: FC<IBasket> = ({
+  totalHosting,
+  cartTotal,
+  items,
+  handleDownloadPdf,
+}) => {
   const context = useContext(TableContext);
+  const pdfRef = useRef<HTMLDivElement>(null);
 
   return (
-    <BasketWrapper>
+    <BasketWrapper ref={pdfRef}>
       <BasketTitleWrapper>
         <BasketTitle>{BASKET_TEXT.title}</BasketTitle>
       </BasketTitleWrapper>
@@ -50,6 +58,11 @@ const Basket: FC<IBasket> = ({ totalHosting, cartTotal, items }) => {
         }}
       />
       <SumWrapper>
+        <DownloadButtonWrapper
+          onClick={() => handleDownloadPdf(pdfRef.current as HTMLDivElement)}
+        >
+          <DownloadIcon />
+        </DownloadButtonWrapper>
         <Sum
           isBasketView={true}
           price={formatNumberWithSpaces(cartTotal)}

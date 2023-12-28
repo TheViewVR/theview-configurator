@@ -1,5 +1,6 @@
 import { Table } from 'antd';
 import { styled } from 'styled-components';
+import { DownloadOutlined } from '@ant-design/icons';
 
 import { COLORS } from 'constants/colorPalette';
 
@@ -61,11 +62,11 @@ export const SumWrapper = styled('div')({
   borderTop: '1px solid #DCE1EB',
   width: '100%',
   height: '36px',
-  padding: '32px 0',
+  padding: '32px',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
-  gap: '20px',
+  justifyContent: 'flex-start',
+  gap: '40px',
 });
 
 export const TableText = styled('p')({
@@ -77,4 +78,13 @@ export const TableText = styled('p')({
 
 export const TableProduct = styled(TableText)({
   color: 'rgba(0, 0, 0, 0.9)',
+});
+
+export const DownloadButtonWrapper = styled('div')({
+  cursor: 'pointer',
+});
+
+export const DownloadIcon = styled(DownloadOutlined)({
+  fontSize: '28px',
+  color: 'rgba(0, 0, 0, 0.3)',
 });
