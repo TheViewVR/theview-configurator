@@ -10,8 +10,9 @@ export const StyledSectionWrapper = styled('div')({
   flexDirection: 'column',
   justifyContent: 'space-between',
   marginBottom: '40px',
-  '@media (min-width: 1520px)': {
-    width: '70vw',
+  fontFamily: 'Poppins, sans-serif',
+  '@media (min-width: 1920px)': {
+    width: '1250px',
   },
 });
 
@@ -26,15 +27,14 @@ export const CardsWrapper = styled('div')({
   gap: '28px',
   marginTop: '28px',
   flexWrap: 'wrap',
-  '@media (min-width: 1776px)': {
-    justifyContent: 'space-between',
-    maxWidth: '70vw',
-  },
 });
 
 export const SectionTitle = styled('h1')({
   fontWeight: 600,
   fontSize: '20px',
-  color: '#000000E5',
   margin: 0,
+  color: 'rgba(0, 0, 0, 0.9)',
+  '@media (min-width: 1920px)': {
+    fontSize: '23px',
+  },
 });

@@ -14,6 +14,7 @@ import {
   SectionTitle,
   SectionWrapper,
   StandartWrapper,
+  StyledImage,
 } from './styled';
 import { LIST_ITEMS, STANDART_SECTION_TEXT, STANDART_SUM } from './constants';
 
@@ -22,7 +23,7 @@ const StandartSection: FC = () => (
     <SectionWrapper>
       <ImageSection>
         <SectionTitle>{STANDART_SECTION_TEXT.title}</SectionTitle>
-        <img src={standartSectionImage} alt='standartSectionImage' />
+        <StyledImage src={standartSectionImage} alt='standartSectionImage' />
       </ImageSection>
       <InfoSection>
         <ListWrapper>
