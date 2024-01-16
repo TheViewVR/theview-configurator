@@ -12,9 +12,9 @@ import {
 } from 'assets/icons';
 
 export const STANDART_SECTION_TEXT = {
-  title: 'Standart package',
+  title: 'Standard package',
   badge:
-    'The virtual tours from this package will also be available to you as direct links.',
+    'The virtual tours, when purchased as an add-on, can be provided as separate links for 3rd party use.',
 };
 
 export const LIST_ITEMS = [
@@ -53,10 +53,6 @@ export const LIST_ITEMS = [
   {
     image: <Presentation />,
     title: 'Guided Presentation Tool',
-  },
-  {
-    image: <CheckSquareOffset />,
-    title: 'CRM Integration for Units Online Availability',
   },
   {
     image: <Files />,
