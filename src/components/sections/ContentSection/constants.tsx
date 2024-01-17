@@ -63,8 +63,8 @@ export const CARDS_CONTENT = [
     description:
       'Can be embedded to the Apartment Card, your website and 3rd Party Platforms',
     image: <StyledCardImage src={img6} alt='img6' />,
-    price: 1000,
-    totalPrice: 1000,
+    price: 750,
+    totalPrice: 750,
     initialHosting: 20,
     hosting: 20,
   },
