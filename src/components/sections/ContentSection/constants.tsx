@@ -7,7 +7,7 @@ export const CARDS_CONTENT = [
     id: '1',
     title: '3D floor plans',
     description:
-      'Page you can share with all your vendors so they can embed all content separately (item-by-item)',
+      'These 3D floorplans will be integrated into the widget and can be used on your website and sent separately for all other marketing use cases.',
     image: <StyledCardImage src={img1} alt='img1' />,
     price: 150,
     totalPrice: 150,
@@ -18,7 +18,7 @@ export const CARDS_CONTENT = [
     id: '2',
     title: 'Interactive 3D floor plan',
     description:
-      'Can be embedded to the Apartment Card, your website and 3rd Party Platforms',
+      'These interactive 3D floorplans will be integrated into the widget and can be used on your website and sent separately for all other marketing use cases as iFrame links or source files.',
     image: <StyledCardImage src={img2} alt='img2' />,
     price: 300,
     totalPrice: 300,
@@ -29,7 +29,7 @@ export const CARDS_CONTENT = [
     id: '3',
     title: 'Amenity Virtual Tour',
     description:
-      'HDR 360 tour, delivers with the set of 3-5 still images. Can be embedded to the Apartment Card, your website and 3rd Party Platforms.',
+      'These virtual tours will be integrated into the widget and can be used on your website and embedded separately as iFrame links. Each area will include 3-5 still photos.',
     image: <StyledCardImage src={img3} alt='img3' />,
     price: 300,
     totalPrice: 300,
@@ -40,7 +40,7 @@ export const CARDS_CONTENT = [
     id: '4',
     title: 'Unit Level Virtual Tour',
     description:
-      'HDR 360 tour, delivers with the set of 3-5 still images. Can be embedded to the Apartment Card, your website and 3rd Party Platforms.',
+      'These virtual tours will be integrated into the widget and can be used on your website and embedded separately as iFrame links. Each area will include 3-5 still photos.',
     image: <StyledCardImage src={img4} alt='img4' />,
     price: 300,
     totalPrice: 300,

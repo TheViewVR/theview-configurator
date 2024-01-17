@@ -58,13 +58,18 @@ export const CardTitle = styled('h3')({
   margin: 0,
 });
 
-export const CardText = styled('p')({
+export const CardText = styled('span')({
   fontSize: '13px',
   fontWeight: 500,
   lineHeight: '20px',
   color: 'rgba(0, 0, 0, 0.5)',
   marginTop: '10px',
   margin: 0,
+  WebkitLineClamp: 4,
+  WebkitBoxOrient: 'vertical',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  display: '-webkit-box',
 });
 
 export const StyledButton = styled(Button)({

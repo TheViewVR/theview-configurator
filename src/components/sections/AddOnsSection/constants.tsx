@@ -6,7 +6,7 @@ export const CARDS_CONTENT = [
     id: '9',
     title: '3D rendering building integration',
     description:
-      'Page you can share with all your vendors so they can embed all content separately (item-by-item)',
+      '3D models of community places inside an aerial virtual tour with interactive floor/apartment selection before community doors are open.',
     image: <StyledCardImage src={img9} alt='img9' />,
     price: 2500,
     totalPrice: 2500,
@@ -17,7 +17,7 @@ export const CARDS_CONTENT = [
     id: '10',
     title: 'Interior amenity Virtual Tour',
     description:
-      'HDR 360 tour, delivers with the set of 3-5 still images. Can be embedded to the Apartment Card, your website and 3rd Party Platforms.',
+      'These rendered virtual tours will be integrated into the widget and can be used on your website and embedded separately as iFrame links. Each area will include 3 still renderings.',
     image: <StyledCardImage src={img11} alt='img11' />,
     price: 5500,
     totalPrice: 5500,
@@ -28,7 +28,7 @@ export const CARDS_CONTENT = [
     id: '11',
     title: 'Exterior Amenity Virtual Tour',
     description:
-      'HDR 360 tour, delivers with the set of 3-5 still images. Can be embedded to the Apartment Card, your website and 3rd Party Platforms.',
+      'These rendered virtual tours will be integrated into the widget and can be used on your website and embedded separately as iFrame links. Each area will include 3 still renderings.',
     image: <StyledCardImage src={img12} alt='img12' />,
     price: 7300,
     totalPrice: 7300,
@@ -39,7 +39,7 @@ export const CARDS_CONTENT = [
     id: '12',
     title: 'Model Unit Virtual Tour',
     description:
-      'Can be embedded to the Apartment Card, your website and 3rd Party Platforms',
+      'These rendered virtual tours will be integrated into the widget and can be used on your website and embedded separately as iFrame links. Each unit will include 3 still renderings.',
     image: <StyledCardImage src={img10} alt='img10' />,
     price: 4400,
     totalPrice: 4400,
@@ -49,7 +49,8 @@ export const CARDS_CONTENT = [
   {
     id: '13',
     title: 'Amenity/Model Unit Still Renderendings',
-    description: 'Part of the Rendered Virtual Tours',
+    description:
+      'Included with each rendered virtual tour. Can be downloaded in high resolution for web and 3rd party pre-leasing use cases.',
     image: <StyledCardImage src={img13} alt='img13' />,
     price: 0,
     totalPrice: 0,

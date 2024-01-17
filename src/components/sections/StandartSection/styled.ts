@@ -72,7 +72,7 @@ export const ListItemTitle = styled('p')({
 });
 
 export const InfoBadge = styled('div')({
-  height: '48px',
+  height: '60px',
   width: '280px',
   borderRadius: '8px',
   backgroundColor: '#EBF0FF',
